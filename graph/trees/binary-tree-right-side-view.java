@@ -14,6 +14,38 @@
  * }
  */
 
+// correct way
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<Integer> traversal = new ArrayList<>();
+
+        if (root == null) {
+            return traversal;
+        }
+
+        queue.offer(root);
+        while (queue.size() > 0) {
+            int rightMost = 0;
+            int currentLevelNodes = queue.size();
+            for (int i = 0; i < currentLevelNodes; i++) {
+                TreeNode node = queue.poll();
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+                if (i == currentLevelNodes - 1) {
+                    rightMost = node.val;
+                }
+            }
+            traversal.add(rightMost);
+        }
+        return traversal;
+    }
+}
+
 // incorrect way
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
