@@ -1,11 +1,10 @@
 class Solution {
-    public static void main(String args[]) {
-        int n = 7;
+    public int fib(int n) {
         int prev = 0;
         int result = 1;
 
         if (n < 2) {
-            System.out.println(n);
+            result = n;
         } else {
             int i = 2;
             while (i <= n) {
@@ -15,6 +14,6 @@ class Solution {
                 i++;
             }
         }
-        System.out.println(result);
+        return result;
     }
 }
