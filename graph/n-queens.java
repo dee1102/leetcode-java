@@ -17,7 +17,7 @@ class Solution {
                 StringBuilder b = new StringBuilder();
                 for (int i = 0; i < n; i++) {
                     if (path.get(i).get(1) == j) {
-                        b.append("Q");
+                        b.append("Q");`
                     } else {
                         b.append(".");
                     }
